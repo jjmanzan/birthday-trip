@@ -1,106 +1,278 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 html{
     scroll-behavior: smooth;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
-a{
-    text-decoration: dotted;
-    color: black;
+body {
+    background-color: #4c408e;
+    display: block;
+    align-items: center;
+    padding: 20px 20px;
+    margin: 0 85px;
+}
+
+h3, h2, h1, li{
+    color: #fff;
+}
+.navbar {
+    top: 0;
+    position: sticky;
+    border-radius: 50px;
+}
+
+.nav_menu {
+    background-color: #0c1445;
+    padding: 0 50px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
     transition: color 0.3s ease;
 }
 
-a:hover{
-    color: grey !important
+a:hover {
+    font-size: 40px;
+    font-weight: 500;
+    transition: 0.3s ease;
 }
 
-li{
-    list-style: none;
+.who {
+    display: flex;
+    margin: 30px;
 }
 
-nav{
-    background-color: white;
-    position: sticky;
+.who_description {
+    text-align: right;
+    padding: 0 50px;
+}
+
+.us_pic img {
+    object-fit: contain;
+    border-radius: 20px;
+    width: 750px;
+    height: auto;
+}
+
+.where {
+    display: flex;
+    margin: 30px;
+}
+
+.resized-image {
+    width: 750px;
+    height: auto;
+    max-width: 100%;
+}
+
+.resized-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.where_description {
+    text-align: left;
+
+}
+
+.when {
+    margin: 30px;
+}
+
+.when_ss {
+    align-items: center;
+    margin: 10px;
+}
+
+.what {
+    display: flex;
+    margin: 30px;
+}
+.what_description {
+    text-align: left;
+    margin: 30px;
+}
+
+.what_description h1 {
+    text-align: center;
+    margin: 30px;
+}
+.what_description h2 {
+    margin: 10px 30px;
+}
+
+.what_description h3 {
+    margin: 0 30px;
+}
+
+.what_description li {
+    text-wrap: balance;
+    margin: 0 30px;
+    
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        background-color: #4c408e;
+        display: block;
+        align-items: center;
+        padding: 10px 10px;
+        margin: 0 42px;
+    }
+    
+    h3, h2, h1, li{
+        color: #fff;
+    }
+    .navbar {
+        top: 0;
+        position: sticky;
+        border-radius: 25px;
+    }
+    
+    .nav_menu {
+        background-color: #0c1445;
+        padding: 0 25px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 12px;
+        transition: color 0.3s ease;
+    }
+    
+    a:hover {
+        font-size: 20px;
+        font-weight: 250;
+        transition: 0.3s ease;
+    }
+    
+    .who {
+        display: flex;
+        margin: 15px;
+    }
+    
+    .who_description {
+        text-align: right;
+        padding: 0 25px;
+    }
+    
+    .us_pic img {
+        object-fit: contain;
+        border-radius: 10px;
+        width: 375px;
+        height: auto;    }
+    
+    .where {
+        display: flex;
+        margin: 15px;
+    }
+    
+    .resized-image {
+        width: 375px;
+        height: auto;
+        max-width: 100%;
+    }
+    
+    .resized-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    
+    .where_description {
+        text-align: left;
+    
+    }
+    
+    .when {
+        margin: 15px;
+    }
+    
+    .when_ss {
+        align-items: center;
+        margin: 5px;
+    }
+    
+    .what {
+        display: flex;
+        margin: 15px;
+    }
+    .what_description {
+        text-align: left;
+        margin: 15px;
+    }
+    
+    .what_description h1 {
+        text-align: center;
+        margin: 15px;
+    }
+    .what_description h2 {
+        margin: 5px 15px;
+    }
+    
+    .what_description h3 {
+        margin: 0 15px;
+    }
+    
+    .what_description li {
+        text-wrap: balance;
+        margin: 0 15px;
+        
+    }
+}
+/* snowfall effect
+
+try to add it to the background*/
+.snowfall-background {
+    position: fixed;
     top: 0;
-    padding: 0 85px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-    box-shadow: 0 5px 80px rgba(0, 0, 0, 0.1);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
 }
 
-nav ul {
-    display: flex;
-    gap: 40px;
-}
+.snowfall-background::before, .snowfall-background::after {
+    content: '-';
+    position: absolute;
+    top: -10%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 20%, rgba(255, 255, 255, 0) 80%);
+    background-size: 10px 10px;
+    animation: snowfall 10s linear infinite;
+  }
+  
+  .snowfall-background::after {
+    animation-delay: 5s;
+  }
 
-nav button{
-    color: white;
-    background-color: transparent;
-    padding: 12px 16px;
-    border-radius: 5px;
-    border: 1px solid #1c1e53;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.home{
-    display: flex;
-    padding: 90px 85px;
-    align-items: center;
-}
+@keyframes all {
+    0% {
+        transform: translateY(-100%);
+    }
 
-.home img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-
-.who, .when{
-    background-color: #ff6961;
-    padding: 90px 85px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.who .left, .when .left{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-}
-
-.who .left h5, .when .left h5{
-    font-size: 20px;
-    text-align: center;
-}
-
-.what, .where{
-    background-color: #77dd77;
-    padding: 90px 85px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.what .left, .where .left{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.what .left h5, .where .left h5{
-    font-size: 20px;
-    text-align: center;
+    100% {
+        transform: translateY(100%);
+    }
 }
